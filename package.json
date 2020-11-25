@@ -1,0 +1,24 @@
+{
+  "name": "jsjest",
+  "version": "1.0.0",
+  "description": "jest tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "author": "NR",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.12.1",
+    "cross-env": "^7.0.2",
+    "jest": "^26.6.3"
+  },
+  "jest": {
+    "verbose": true
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7"
+  }
+}
