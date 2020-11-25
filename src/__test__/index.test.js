@@ -1,25 +1,9 @@
-import Movies from '../index';
+import MovieManager from '../index';
+import MoviesMock from '../__mocks__/MoviesMock';
+import CustomerMock from '../__mocks__/CustomerMock';
 
 
-const customer = {
-    name: 'Nataly',
-    rentals: [
-        {
-            movieID: 0,
-            days: 3
-        }
-    ]
-}
-
-const movies = [
-    {
-        code: 'new',
-        title: 'Titanic'
-    }
-]
-
-
-const movie = new Movies(customer, movies);
+const movie = new MovieManager(CustomerMock, MoviesMock);
 
 describe('Type of response statement', () => {
 
@@ -38,7 +22,7 @@ describe('Type of response statement', () => {
 
 describe('Frequent client', () => {
 
-    test('Total frequent point', () => {
+    test('Total frequent point if new', () => {
         expect( movie.addFrequentRenterPoints() )
         .toBe(2);
     })

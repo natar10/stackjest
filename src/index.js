@@ -1,6 +1,6 @@
 import StatementCalculator from './statementCalculator';
 
-class Movies extends StatementCalculator{
+class MovieManager extends StatementCalculator{
 
   constructor(customer, movies){
     super(customer, movies);
@@ -27,4 +27,4 @@ class Movies extends StatementCalculator{
 
 }
 
-export default Movies;
+export default MovieManager;

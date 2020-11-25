@@ -1,6 +1,9 @@
-class StatementCalculator{
+import AmountCalculator from './amountCalculator';
+
+class StatementCalculator extends AmountCalculator{
 
     constructor(customer, movies){
+      super(customer, movies)
       this.customer = customer;
       this.movies = movies;
     }
@@ -27,36 +30,9 @@ class StatementCalculator{
     }
 
     movieAmount (code, days) {
-        /*
-        var types = {
-          'regular': this.regularCalculator(days),
-          'new': this.newCalculator(days),
-          'childrens': this.childrensCalculator(days),
-        };*/
+        
+        return this[(code || 'new')+'Calculator'](days);
 
-        return this[code+'Calculator'](days);
-
-        //return (types[code] || types['new']);
-    }
-
-    regularCalculator(days){
-        let thisAmount = 2;
-        if (days > 2) {
-            thisAmount += (days - 2) * 1.5;
-        }    
-        return thisAmount;
-    }
-
-    newCalculator(days){
-        return days * 3;
-    }
-
-    childrensCalculator(days){
-        let thisAmount = 1.5;
-        if (days > 3) {
-          thisAmount += (days - 3) * 1.5;
-        }
-        return thisAmount;
     }
 
   
